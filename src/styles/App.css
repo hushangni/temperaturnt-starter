@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Righteous&display=swap');
+
+
+body {
+  background: #000;
+  min-height: 100vh;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+input {
+  background: none;
+  color: white;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+input::placeholder {
+  opacity: 0.7;
+  color: white;
+}
+
+h1 span {
+  font-family: 'Righteous', cursive;
+  font-size: 60px;
+  letter-spacing: 2px;
+  background: rgb(255,238,21);
+  background: linear-gradient(350deg, rgba(255,238,21,1) 0%, rgb(242, 69, 42) 43%, rgb(184, 13, 199) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.flame {
+  width: 60px;
+  margin-right: 10px;
+  transform: translateY(15px);
+}
+
+main {
+  color: white;
+  padding: 50px;
+  text-align: center;
+}
+
+form {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+input[type="text"] {
+    background: linear-gradient(350deg, rgba(255,238,21,0.6) 0%, rgba(242, 69, 42, 0.6) 100%);
+    padding: 10px 15px;
+    margin: 0 20px;
+}
+
+input[type="text"]:focus {
+  background: linear-gradient(350deg, rgba(255,238,21,1) 0%, rgba(242, 69, 42, 1) 100%);
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  background: linear-gradient(350deg, rgb(184, 13, 199, 0.6) 0%, rgba(242, 69, 42, 0.6) 100%);
+  transition: 0.3s;
+  padding: 10px 15px;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background: linear-gradient(350deg, rgb(184, 13, 199) 0%, rgba(242, 69, 42, 1) 100%);
+}
