@@ -2,16 +2,25 @@
 
 
 body {
-  background: #000;
-  min-height: 100vh;
+  background: white;
+  min-height: calc(100vh  - 110px);
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
 }
 
 .wrapper {
   width: 80%;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 800px;
+  margin: 60px auto 50px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+label {
+  font-weight: 700;
 }
 
 input {
@@ -46,6 +55,8 @@ main {
   color: white;
   padding: 50px;
   text-align: center;
+  background: #000;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.32), 0 10px 20px rgba(0,0,0,0.28);
 }
 
 form {
@@ -58,8 +69,10 @@ form {
 
 input[type="text"] {
     background: linear-gradient(350deg, rgba(255,238,21,0.6) 0%, rgba(242, 69, 42, 0.6) 100%);
-    padding: 10px 15px;
-    margin: 0 20px;
+    padding: 13px 15px;
+    margin: 0 20px 0 12px;
+    max-width: 200px;
+
 }
 
 input[type="text"]:focus {
@@ -68,12 +81,98 @@ input[type="text"]:focus {
 
 input[type="submit"] {
   cursor: pointer;
-  background: linear-gradient(350deg, rgb(184, 13, 199, 0.6) 0%, rgba(242, 69, 42, 0.6) 100%);
   transition: 0.3s;
   padding: 10px 15px;
+  border: 3px solid white;
 }
 
 input[type="submit"]:hover,
 input[type="submit"]:focus {
-  background: linear-gradient(350deg, rgb(184, 13, 199) 0%, rgba(242, 69, 42, 1) 100%);
+  background: white;
+  color: black;
+}
+
+.temp,
+.weather,
+.icon {
+  padding: 20px 15px;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.temp {
+  background-color: rgb(121, 37, 181);
+  margin-top: 30px;
+}
+
+.weather {
+  background-color: rgb(168, 38, 180);
+}
+
+.icon {
+  background-color: rgb(194, 84, 175);
+  padding: 0 15px;
+}
+
+.icon img {
+  width: 60px;
+}
+
+.placeholder {
+  background-color: rgb(219, 90, 20);
+    padding: 20px 15px;
+  max-width: 350px;
+  margin: 40px auto;
+}
+
+.results {
+  margin-bottom: 20px;
+}
+
+.credit {
+  text-align: center;
+  font-size: 12px;
+  position: fixed;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+
+}
+
+@media (max-width: 635px) {
+  h1 span {
+    font-size: 45px;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  input[type="text"] {
+    margin: 20px 0;
+    max-width: 80%;
+  }
+
+  main {
+    padding: 30px;
+  }
+
+  .wrapper {
+    margin: 50px auto 80px;
+  }
+
+  body {
+    min-height: calc(100vh  - 130px);
+  }
+}
+
+@media (max-width: 465px) {
+  h1 span {
+    font-size: 32px;
+  }
+
+  .flame {
+    width: 35px;
+    transform: translateY(8px);
+  }
 }

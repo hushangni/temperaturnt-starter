@@ -39,7 +39,8 @@ class App extends Component {
 
       this.setState({
         temperature: apiData.data.main.temp,
-        weather: apiData.data.weather[0].main
+        weather: apiData.data.weather[0].main,
+        iconCode: apiData.data.weather[0].icon
       })
 
     } catch(err) {
@@ -52,9 +53,10 @@ class App extends Component {
   }
 
   render() {
-    const { temperature, weather }  = this.state;
+    const { temperature, weather, iconCode }  = this.state;
     return (
-      <main className="wrapper">
+      <>
+        <main className="wrapper">
           <h1>
             <img src={flame} className="flame" alt="Orange flame icon."/>
             <span>temperaturnt</span>
@@ -70,17 +72,22 @@ class App extends Component {
           {
             temperature ?
               <div className="results">
-                <p>{temperature}</p>
-                <p>{weather}</p>
+                <p className="temp">{temperature} °C</p>
+                <p className="weather">{weather}</p>
+                <div className="icon">
+                  <img src={`http://openweathermap.org/img/wn/${iconCode}@2x.png`} alt=""/>
+                </div>
               </div>
 
               :
 
               <div className="results">
-                <p>search for the weather in a city!</p>
+                <p className="placeholder">search for the weather in a city</p>
               </div>
           }
       </main>
+        <p className="credit">Graphics Designed By LovePik User(ID:23428404) From <a href="https://lovepik.com/image-401502076/gradient-color-block-flame.html">LovePik.com</a>, Data from <a href="https://openweathermap.org/api">Open Weather API</a></p>
+      </>
     );
   }
 }
